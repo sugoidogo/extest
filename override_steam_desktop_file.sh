@@ -1,5 +1,5 @@
 #!/bin/bash
-EXTEST="/usr/lib32/libextest.so"
+EXTEST="/usr/lib/extest/libextest.so"
 STEAM_DESKTOP_FILE=""
 
 IFS=: read -a search_paths < <(echo "$XDG_DATA_DIRS")
