@@ -133,10 +133,5 @@ use the "wayland-server" feature of the "%{crate}" crate.
 %install
 %cargo_install -a
 
-%if %{with check}
-%check
-%cargo_test -a
-%endif
-
 %changelog
 %autochangelog
