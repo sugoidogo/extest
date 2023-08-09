@@ -1,19 +1,7 @@
 #!/bin/bash
-
-DIR="$(dirname $(readlink -f "$0"))"
-EXTEST=$DIR/target/i686-unknown-linux-gnu/release/libextest.so
-
-if ! [ -f $EXTEST ]; then
-	echo "Extest not built, building..."
-	cd $DIR
-	cargo build --release
-	if ! [ $? -eq 0 ]; then
-		echo "Failed to build, aborting"
-		exit 1
-	fi
-fi
-
+EXTEST="/usr/lib/extest/libextest.so"
 STEAM_DESKTOP_FILE=""
+
 IFS=: read -a search_paths < <(echo "$XDG_DATA_DIRS")
 for path in "${search_paths[@]}"; do
 	if [ -f $path/applications/steam.desktop ]; then
