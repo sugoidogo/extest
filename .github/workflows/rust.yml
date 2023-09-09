@@ -14,10 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Prepare
-      run: rustup target add i686-unknown-linux-gnu
-    - name: Build
-      run: cargo build --release --verbose
+    - run: export LIBRARY_PATH=/usr/lib32:$LIBRARY_PATH
+    - run: rustup target add i686-unknown-linux-gnu
+    - run: cargo build --release --verbose
     - uses: svenstaro/upload-release-action@v2
       with:
         file: target/i686-unknown-linux-gnu/release/libextest.so
