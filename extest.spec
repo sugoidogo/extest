@@ -27,7 +27,7 @@ Extest is a drop in replacement for the X11 XTEST extension. It creates a virtua
 %install
 %cargo_install
 mkdir -p %{buildroot}%{_libdir}/extest/
-install -D -p -m0755 target/*/libextest.so %{buildroot}%{_libdir}/extest/libextest.so
+install -D -p -m0755 target/release/libextest.so %{buildroot}%{_libdir}/extest/libextest.so
 
 %files
 %license LICENSE
